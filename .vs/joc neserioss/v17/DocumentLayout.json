@@ -1,0 +1,184 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Faculta\\Unity\\Projects\\joc neserioss\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AF8377BD-2341-83D5-D1D1-9C73A4C9AEFF}|Assembly-CSharp.csproj|d:\\faculta\\unity\\projects\\joc neserioss\\assets\\playerchars\\scripts\\weaponhitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF8377BD-2341-83D5-D1D1-9C73A4C9AEFF}|Assembly-CSharp.csproj|solutionrelative:assets\\playerchars\\scripts\\weaponhitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF8377BD-2341-83D5-D1D1-9C73A4C9AEFF}|Assembly-CSharp.csproj|D:\\Faculta\\Unity\\Projects\\joc neserioss\\assets\\scripts\\uihealthbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF8377BD-2341-83D5-D1D1-9C73A4C9AEFF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\uihealthbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF8377BD-2341-83D5-D1D1-9C73A4C9AEFF}|Assembly-CSharp.csproj|D:\\Faculta\\Unity\\Projects\\joc neserioss\\assets\\scripts\\spectatorcamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF8377BD-2341-83D5-D1D1-9C73A4C9AEFF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spectatorcamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF8377BD-2341-83D5-D1D1-9C73A4C9AEFF}|Assembly-CSharp.csproj|d:\\faculta\\unity\\projects\\joc neserioss\\assets\\scripts\\damagepopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF8377BD-2341-83D5-D1D1-9C73A4C9AEFF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\damagepopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF8377BD-2341-83D5-D1D1-9C73A4C9AEFF}|Assembly-CSharp.csproj|D:\\Faculta\\Unity\\Projects\\joc neserioss\\assets\\playerchars\\scripts\\playercombat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF8377BD-2341-83D5-D1D1-9C73A4C9AEFF}|Assembly-CSharp.csproj|solutionrelative:assets\\playerchars\\scripts\\playercombat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF8377BD-2341-83D5-D1D1-9C73A4C9AEFF}|Assembly-CSharp.csproj|D:\\Faculta\\Unity\\Projects\\joc neserioss\\assets\\scripts\\generichealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF8377BD-2341-83D5-D1D1-9C73A4C9AEFF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\generichealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF8377BD-2341-83D5-D1D1-9C73A4C9AEFF}|Assembly-CSharp.csproj|D:\\Faculta\\Unity\\Projects\\joc neserioss\\assets\\playerchars\\scripts\\playerstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF8377BD-2341-83D5-D1D1-9C73A4C9AEFF}|Assembly-CSharp.csproj|solutionrelative:assets\\playerchars\\scripts\\playerstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF8377BD-2341-83D5-D1D1-9C73A4C9AEFF}|Assembly-CSharp.csproj|D:\\Faculta\\Unity\\Projects\\joc neserioss\\assets\\enemies\\scripts\\enemyhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF8377BD-2341-83D5-D1D1-9C73A4C9AEFF}|Assembly-CSharp.csproj|solutionrelative:assets\\enemies\\scripts\\enemyhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF8377BD-2341-83D5-D1D1-9C73A4C9AEFF}|Assembly-CSharp.csproj|D:\\Faculta\\Unity\\Projects\\joc neserioss\\assets\\playerchars\\scripts\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF8377BD-2341-83D5-D1D1-9C73A4C9AEFF}|Assembly-CSharp.csproj|solutionrelative:assets\\playerchars\\scripts\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF8377BD-2341-83D5-D1D1-9C73A4C9AEFF}|Assembly-CSharp.csproj|D:\\Faculta\\Unity\\Projects\\joc neserioss\\assets\\playerchars\\scripts\\playeranimhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF8377BD-2341-83D5-D1D1-9C73A4C9AEFF}|Assembly-CSharp.csproj|solutionrelative:assets\\playerchars\\scripts\\playeranimhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DamagePopup.cs",
+              "DocumentMoniker": "D:\\Faculta\\Unity\\Projects\\joc neserioss\\Assets\\Scripts\\DamagePopup.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\DamagePopup.cs",
+              "ToolTip": "D:\\Faculta\\Unity\\Projects\\joc neserioss\\Assets\\Scripts\\DamagePopup.cs",
+              "RelativeToolTip": "Assets\\Scripts\\DamagePopup.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T14:40:13.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SpectatorCamera.cs",
+              "DocumentMoniker": "D:\\Faculta\\Unity\\Projects\\joc neserioss\\Assets\\Scripts\\SpectatorCamera.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SpectatorCamera.cs",
+              "ToolTip": "D:\\Faculta\\Unity\\Projects\\joc neserioss\\Assets\\Scripts\\SpectatorCamera.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SpectatorCamera.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwCEAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T14:20:45.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UIHealthBar.cs",
+              "DocumentMoniker": "D:\\Faculta\\Unity\\Projects\\joc neserioss\\Assets\\Scripts\\UIHealthBar.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UIHealthBar.cs",
+              "ToolTip": "D:\\Faculta\\Unity\\Projects\\joc neserioss\\Assets\\Scripts\\UIHealthBar.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UIHealthBar.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T12:45:04.713Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WeaponHitbox.cs",
+              "DocumentMoniker": "D:\\Faculta\\Unity\\Projects\\joc neserioss\\Assets\\PlayerChars\\Scripts\\WeaponHitbox.cs",
+              "RelativeDocumentMoniker": "Assets\\PlayerChars\\Scripts\\WeaponHitbox.cs",
+              "ToolTip": "D:\\Faculta\\Unity\\Projects\\joc neserioss\\Assets\\PlayerChars\\Scripts\\WeaponHitbox.cs",
+              "RelativeToolTip": "Assets\\PlayerChars\\Scripts\\WeaponHitbox.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAkwF8AAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T11:41:41.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EnemyHealth.cs",
+              "DocumentMoniker": "D:\\Faculta\\Unity\\Projects\\joc neserioss\\Assets\\Enemies\\Scripts\\EnemyHealth.cs",
+              "RelativeDocumentMoniker": "Assets\\Enemies\\Scripts\\EnemyHealth.cs",
+              "ToolTip": "D:\\Faculta\\Unity\\Projects\\joc neserioss\\Assets\\Enemies\\Scripts\\EnemyHealth.cs",
+              "RelativeToolTip": "Assets\\Enemies\\Scripts\\EnemyHealth.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T14:13:37.151Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PlayerStats.cs",
+              "DocumentMoniker": "D:\\Faculta\\Unity\\Projects\\joc neserioss\\Assets\\PlayerChars\\Scripts\\PlayerStats.cs",
+              "RelativeDocumentMoniker": "Assets\\PlayerChars\\Scripts\\PlayerStats.cs",
+              "ToolTip": "D:\\Faculta\\Unity\\Projects\\joc neserioss\\Assets\\PlayerChars\\Scripts\\PlayerStats.cs",
+              "RelativeToolTip": "Assets\\PlayerChars\\Scripts\\PlayerStats.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwCgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T14:05:34.341Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PlayerCombat.cs",
+              "DocumentMoniker": "D:\\Faculta\\Unity\\Projects\\joc neserioss\\Assets\\PlayerChars\\Scripts\\PlayerCombat.cs",
+              "RelativeDocumentMoniker": "Assets\\PlayerChars\\Scripts\\PlayerCombat.cs",
+              "ToolTip": "D:\\Faculta\\Unity\\Projects\\joc neserioss\\Assets\\PlayerChars\\Scripts\\PlayerCombat.cs",
+              "RelativeToolTip": "Assets\\PlayerChars\\Scripts\\PlayerCombat.cs",
+              "ViewState": "AgIAAJ4AAAAAAAAAAAAIwKUAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T11:24:10.307Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GenericHealth.cs",
+              "DocumentMoniker": "D:\\Faculta\\Unity\\Projects\\joc neserioss\\Assets\\Scripts\\GenericHealth.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GenericHealth.cs",
+              "ToolTip": "D:\\Faculta\\Unity\\Projects\\joc neserioss\\Assets\\Scripts\\GenericHealth.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GenericHealth.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwCQAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T13:59:52.263Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PlayerAnimHandler.cs",
+              "DocumentMoniker": "D:\\Faculta\\Unity\\Projects\\joc neserioss\\Assets\\PlayerChars\\Scripts\\PlayerAnimHandler.cs",
+              "RelativeDocumentMoniker": "Assets\\PlayerChars\\Scripts\\PlayerAnimHandler.cs",
+              "ToolTip": "D:\\Faculta\\Unity\\Projects\\joc neserioss\\Assets\\PlayerChars\\Scripts\\PlayerAnimHandler.cs",
+              "RelativeToolTip": "Assets\\PlayerChars\\Scripts\\PlayerAnimHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAB9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T11:23:03.426Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PlayerMovement.cs",
+              "DocumentMoniker": "D:\\Faculta\\Unity\\Projects\\joc neserioss\\Assets\\PlayerChars\\Scripts\\PlayerMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\PlayerChars\\Scripts\\PlayerMovement.cs",
+              "ToolTip": "D:\\Faculta\\Unity\\Projects\\joc neserioss\\Assets\\PlayerChars\\Scripts\\PlayerMovement.cs",
+              "RelativeToolTip": "Assets\\PlayerChars\\Scripts\\PlayerMovement.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAqwFoAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T13:28:27.265Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

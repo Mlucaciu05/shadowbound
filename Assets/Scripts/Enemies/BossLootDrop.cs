@@ -7,6 +7,7 @@ public class BossLootDrop : MonoBehaviour
     public LootNotificationUI notificationUI;
     public ItemGenerator itemGenerator;
     public bool dropOnlyOnce = true;
+    public bool suppressWhenStoryQuestBossPresent = true;
 
     private bool hasDropped;
 
@@ -30,6 +31,11 @@ public class BossLootDrop : MonoBehaviour
 
     public ItemInstance DropLoot()
     {
+        if (suppressWhenStoryQuestBossPresent && GetComponent<StoryQuestBoss>() != null)
+        {
+            return null;
+        }
+
         if (dropOnlyOnce && hasDropped) return null;
         hasDropped = true;
 

@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class WeaponHitbox : MonoBehaviour
@@ -14,25 +12,11 @@ public class WeaponHitbox : MonoBehaviour
 
     public GameObject dmgPopupPrefab;
 
-    private List<GameObject> hitEnemies = new List<GameObject>();
-
-    
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private List<IDamageable> hitTargets = new List<IDamageable>();
 
     public void ResetHitList()
     {
-        hitEnemies.Clear();
+        hitTargets.Clear();
     }
 
     public float ProcessDamage(float damageDealt, float damageMultiplier)
@@ -59,50 +43,49 @@ public class WeaponHitbox : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == owner) return;
+        if (owner != null && other.transform.IsChildOf(owner.transform)) return;
 
-        if (hitEnemies.Contains(other.gameObject)) { return; }
+        IDamageable damageable = other.GetComponentInParent<IDamageable>();
+        if (damageable == null || damageable.IsDead) return;
+        if (hitTargets.Contains(damageable)) return;
 
-        GenericHealth enemy = other.GetComponent<GenericHealth>();
-        if (enemy == null) return;
+        Vector3 hitPoint = other.ClosestPoint(transform.position);
+        DamageData damageData = combat != null
+            ? combat.BuildDamageData(damageable.DamageTransform.gameObject, hitPoint)
+            : new DamageData(ProcessDamage(damageDealt, damageMultiplier), DamageType.Physical, owner, 3f, false).WithHit(hitPoint, other.transform.position - transform.position);
 
-        if (other.gameObject.CompareTag("Enemy")) { 
-        float finalDmg = ProcessDamage(damageDealt, damageMultiplier);
+        hitTargets.Add(damageable);
+        float finalDmg = damageable.TakeDamage(damageData);
 
-            Debug.Log($"HIT");
-            hitEnemies.Add(other.gameObject);
-            enemy.TakeDamage(finalDmg);
+        if (dmgPopupPrefab != null)
+        {
+            // 1. Core target position (center of enemy)
+            Vector3 spawnPosition = damageable.DamageTransform.position;
 
-            if (dmgPopupPrefab != null)
+            // 2. Vertical offset: push it up 1.8 meters (roughly head height)
+            spawnPosition.y += 1.8f;
+
+            // 3. Horizontal Offset: Find which way is "Right" from the camera's perspective
+            if (Camera.main != null)
             {
-                // 1. Core target position (center of enemy)
-                Vector3 spawnPosition = other.transform.position;
+                Vector3 cameraRight = Camera.main.transform.right;
+                cameraRight.y = 0f; // Keep it purely horizontal on the flat plane
 
-                // 2. Vertical offset: push it up 1.8 meters (roughly head height)
-                spawnPosition.y += 1.8f;
+                // Randomly choose to pop up on the left (-1) or right (+1) side of the enemy shoulder
+                float sideChooser = Random.value > 0.5f ? 1f : -1f;
+                float horizontalDistance = 1.5f; // How many meters to the side it shoots out
 
-                // 3. Horizontal Offset: Find which way is "Right" from the camera's perspective
-                if (Camera.main != null)
-                {
-                    Vector3 cameraRight = Camera.main.transform.right;
-                    cameraRight.y = 0f; // Keep it purely horizontal on the flat plane
-
-                    // Randomly choose to pop up on the left (-1) or right (+1) side of the enemy shoulder
-                    float sideChooser = Random.value > 0.5f ? 1f : -1f;
-                    float horizontalDistance = 1.5f; // How many meters to the side it shoots out
-
-                    spawnPosition += cameraRight.normalized * (horizontalDistance * sideChooser);
-                }
-
-                // 4. Spawn the number in the clean calculated air space
-                GameObject popupInstance = Instantiate(dmgPopupPrefab, spawnPosition, Quaternion.identity);
-                DamagePopup popupScript = popupInstance.GetComponent<DamagePopup>();
-
-                if (popupScript != null)
-                {
-                    popupScript.Setup(finalDmg);
-                }
+                spawnPosition += cameraRight.normalized * (horizontalDistance * sideChooser);
             }
 
+            // 4. Spawn the number in the clean calculated air space
+            GameObject popupInstance = Instantiate(dmgPopupPrefab, spawnPosition, Quaternion.identity);
+            DamagePopup popupScript = popupInstance.GetComponent<DamagePopup>();
+
+            if (popupScript != null)
+            {
+                popupScript.Setup(finalDmg);
+            }
         }
     }
 }

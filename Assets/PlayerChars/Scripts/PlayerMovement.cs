@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -26,8 +24,12 @@ public class PlayerMovement : MonoBehaviour
         combat = GetComponent<PlayerCombat>();
 
         // Lock rotation so physics objects don't tip the capsule over
-        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-        rb.interpolation = RigidbodyInterpolation.Interpolate;
+        if (rb != null)
+        {
+            rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+            rb.interpolation = RigidbodyInterpolation.Interpolate;
+        }
+
         rotationY = transform.localEulerAngles.y;
     }
 
@@ -38,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.D)) rotationY += rotSpeed * Time.deltaTime;
 
         // 2. Tell the animation system what to play based on inputs
-        if (!combat.isAttacking)
+        if (combat == null || !combat.isAttacking)
         {
             HandleMovementInputTransitions();
         }
@@ -48,10 +50,12 @@ public class PlayerMovement : MonoBehaviour
     {
         // Apply character turning
         Quaternion targetRotation = Quaternion.Euler(0, rotationY, 0);
+        if (rb == null) return;
+
         rb.MoveRotation(targetRotation);
 
         // If attacking, let PlayerCombat handle the physics updates completely
-        if (combat.isAttacking)
+        if (combat != null && combat.isAttacking)
         {
             combat.ProcessAttackPhysics();
             return;
@@ -64,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             moveDir = transform.forward;
-            if (combat.isBlocking)
+            if (combat != null && combat.isBlocking)
                 currentSpeed = blockSpeed;
             else
                 currentSpeed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
@@ -72,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
         else if (Input.GetKey(KeyCode.S))
         {
             moveDir = -transform.forward;
-            if (combat.isBlocking)
+            if (combat != null && combat.isBlocking)
                 currentSpeed = blockSpeed;
             else
                 currentSpeed = Input.GetKey(KeyCode.LeftShift) ? runBackSpeed : walkBackSpeed;
@@ -83,9 +87,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleMovementInputTransitions()
     {
+        if (animHandler == null) return;
+
         if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
         {
-            if (!combat.isBlocking)
+            if (combat == null || !combat.isBlocking)
                 animHandler.SetAnimationState("idle");
             else 
                 animHandler.SetAnimationState("block-idle");
@@ -94,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            if (combat.isBlocking)
+            if (combat != null && combat.isBlocking)
                 animHandler.SetAnimationState("walk");
             else
             {
@@ -106,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            if (combat.isBlocking)
+            if (combat != null && combat.isBlocking)
                 animHandler.SetAnimationState("walk");
             else
             {

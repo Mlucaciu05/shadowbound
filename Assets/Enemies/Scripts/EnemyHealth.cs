@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
@@ -19,13 +17,48 @@ public class EnemyHealth : MonoBehaviour
 
     public void HandleEnemyFlinch(float currentHealth)
     {
-        if (enemyAnimator != null) enemyAnimator.SetTrigger("impact");
+        if (enemyAnimator != null)
+        {
+            if (HasParameter("Hit", AnimatorControllerParameterType.Trigger))
+            {
+                enemyAnimator.SetTrigger("Hit");
+            }
+            else if (HasParameter("impact", AnimatorControllerParameterType.Trigger))
+            {
+                enemyAnimator.SetTrigger("impact");
+            }
+        }
     }
 
     private void HandleEnemyDeath()
     {
-        if (enemyAnimator != null) enemyAnimator.SetTrigger("death");
+        if (enemyAnimator != null)
+        {
+            if (HasParameter("Die", AnimatorControllerParameterType.Trigger))
+            {
+                enemyAnimator.SetTrigger("Die");
+            }
+            else if (HasParameter("death", AnimatorControllerParameterType.Trigger))
+            {
+                enemyAnimator.SetTrigger("death");
+            }
+        }
 
         Destroy(gameObject, 3f);
+    }
+
+    private bool HasParameter(string parameterName, AnimatorControllerParameterType parameterType)
+    {
+        if (enemyAnimator == null) return false;
+
+        foreach (AnimatorControllerParameter parameter in enemyAnimator.parameters)
+        {
+            if (parameter.name == parameterName && parameter.type == parameterType)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

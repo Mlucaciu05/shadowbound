@@ -22,6 +22,12 @@ public class MainMenuController : MonoBehaviour
             continueButton.interactable = SaveSystem.Load() != null;
         }
 
+        SpectatorCamera cameraScript = FindObjectOfType<SpectatorCamera>();
+
+        if (cameraScript != null)
+        {
+            cameraScript.enabled = false;
+        }
         ShowMainPanel();
     }
 
@@ -33,6 +39,12 @@ public class MainMenuController : MonoBehaviour
             GameProgress.Instance.NewGame();
         }
 
+        SpectatorCamera cameraScript = FindObjectOfType<SpectatorCamera>();
+
+        if (cameraScript != null)
+        {
+            cameraScript.enabled = true;
+        }
         SceneManager.LoadScene(gameplaySceneName);
     }
 
@@ -45,6 +57,12 @@ public class MainMenuController : MonoBehaviour
             GameProgress.Instance.LoadFromDisk();
         }
 
+        SpectatorCamera cameraScript = FindObjectOfType<SpectatorCamera>();
+
+        if (cameraScript != null)
+        {
+            cameraScript.enabled = true;
+        }
         SceneManager.LoadScene(gameplaySceneName);
     }
 

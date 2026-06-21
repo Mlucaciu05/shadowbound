@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{AF8377BD-2341-83D5-D1D1-9C73A4C9AEFF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shadowbound", "Shadowbound.csproj", "{6FE0CB24-7174-5B07-4207-07826C033E25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shadowbound.Tests.EditMode", "Shadowbound.Tests.EditMode.csproj", "{EA52F17D-6182-9190-A01F-6698F4F256C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +11,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AF8377BD-2341-83D5-D1D1-9C73A4C9AEFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AF8377BD-2341-83D5-D1D1-9C73A4C9AEFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AF8377BD-2341-83D5-D1D1-9C73A4C9AEFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AF8377BD-2341-83D5-D1D1-9C73A4C9AEFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FE0CB24-7174-5B07-4207-07826C033E25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FE0CB24-7174-5B07-4207-07826C033E25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FE0CB24-7174-5B07-4207-07826C033E25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FE0CB24-7174-5B07-4207-07826C033E25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA52F17D-6182-9190-A01F-6698F4F256C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA52F17D-6182-9190-A01F-6698F4F256C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA52F17D-6182-9190-A01F-6698F4F256C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA52F17D-6182-9190-A01F-6698F4F256C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

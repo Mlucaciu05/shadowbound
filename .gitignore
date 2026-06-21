@@ -7,4 +7,4 @@
 /[Uu]ser[Ss]ettings/
 *.private
 *.pre
-*.crash
+*.crash.vs/

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameProgress : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class GameProgress : MonoBehaviour
     public UnityEvent onFinalQuestUnlocked = new UnityEvent();
 
     private SaveData data = new SaveData();
+    private bool pendingRestorePlayerState;
 
     public int Xp { get { return data.xp; } }
     public int Level { get { return data.xp / XpPerLevel + 1; } }
@@ -40,25 +42,75 @@ public class GameProgress : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        LoadFromDisk();
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        LoadFromDisk(false);
+    }
+
+    void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+            Instance = null;
+        }
+    }
+
+    void OnApplicationQuit()
+    {
+        CapturePlayerState();
+        Save();
     }
 
     public void NewGame()
     {
         data = new SaveData();
         SaveSystem.Delete();
+        pendingRestorePlayerState = false;
         onProgressChanged?.Invoke();
     }
 
     public void LoadFromDisk()
     {
+        LoadFromDisk(true);
+    }
+
+    public void LoadFromDisk(bool restorePlayerState)
+    {
         data = SaveSystem.Load() ?? new SaveData();
+        pendingRestorePlayerState = restorePlayerState && data.hasPlayerState;
         RefreshFinalQuestUnlock(false);
     }
 
     public void Save()
     {
+        CapturePlayerState();
         SaveSystem.Save(data);
+    }
+
+    private void CapturePlayerState()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player == null) return;
+
+        data.hasPlayerState = true;
+        data.sceneName = SceneManager.GetActiveScene().name;
+        data.playerPosition = player.transform.position;
+        data.playerRotationY = player.transform.eulerAngles.y;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (!pendingRestorePlayerState || !data.hasPlayerState) return;
+        if (!string.IsNullOrEmpty(data.sceneName) && data.sceneName != scene.name) return;
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            player.transform.position = data.playerPosition;
+            player.transform.rotation = Quaternion.Euler(0f, data.playerRotationY, 0f);
+        }
+
+        pendingRestorePlayerState = false;
     }
 
     public bool IsMissionAccepted(string missionId)

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 [Serializable]
 public class SaveData
@@ -12,4 +13,9 @@ public class SaveData
     public bool finalQuestUnlocked;
     public bool finalQuestAccepted;
     public bool finalQuestComplete;
+
+    public bool hasPlayerState;
+    public string sceneName;
+    public Vector3 playerPosition;
+    public float playerRotationY;
 }
